@@ -23,9 +23,9 @@ function App() {
               if(response.ok){
                   return json
               }
-              if(!response.ok){
-                  throw Error('cant load data')
-              }
+              // if(!response.ok){
+              //     throw Error('cant load data')
+              // }
           
           }
     ),[]) 
