@@ -11,3 +11,146 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.material-icons{
+  cursor: pointer;
+}
+.searchicon{
+  font-weight: bolder;
+  color: white;
+  border: solid 1px white;
+  /* background: transparent; */
+
+  
+}
+.d-flexses{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 10px;
+}
+
+
+/* portal */
+.modalstyle{
+  position: fixed;
+  max-height: 60vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 50px;
+  z-index: 1000;
+  overflow: auto;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.modallink{
+  display: block;
+  background: aliceblue;
+  margin: 15px 0;
+  padding: 10px 5px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .7) ;
+}
+.modallink img{
+  width: 5%;
+}
+
+
+.overlaystyle{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 1000;
+}
+
+
+/* first-section */
+section{
+  width: 100%;
+}
+#header-section{
+  background-image: url('./asset/johnwick.webp');
+  background-size: cover;
+  min-height: 80vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+}
+#header-section p {
+  text-align: left;
+  padding: 8% 15%;
+}
+.navbar-brand{
+  color: white;
+}
+.navbar-brand:hover{
+  color: white;
+}
+.form-control{
+  background: transparent;
+}
+
+/* second-section */
+h2{
+  text-align: center;
+  padding:20px 0 ;
+}
+.filmcolgrid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.filmcolgrid img{
+  width: 80%;
+}
+
+@media (max-width:780px) {
+  .filmcolgrid{
+      grid-template-columns: repeat(2,1fr);
+  }
+  .d-flexses{
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width:780px) and (max-width:910px) {
+  .filmcolgrid{
+      grid-template-columns: repeat(3,1fr);
+  }
+}
+
+/* template section */
+.templatesection img{
+  width: 60%;
+  border-radius: 15px;
+}
+.templatesection{
+  background-image: url('./asset/abstract-uv-ultraviolet-light-composition.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  height:100%
+}
+.templatesection .container-fluid{
+  padding: 1% 10%;
+}
+.templaterow{
+  align-items: center;
+}
+.templatesection, .templatesection h1{
+  text-align: left;
+}
+footer{
+  text-align: center;
+  padding: 10% 0 ;
+}

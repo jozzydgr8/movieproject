@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+
+import {Root} from './Layout/Root'
+import {Template} from './Layout/Template'
+//pagges
+import {  Home } from "./Pages/Home";
+import { NotFound } from "./Pages/NotFound";
+import { useMemo } from "react";
+
+
+
 
 function App() {
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<Root/>} >
+      <Route index element={<Home/>} />
+      <Route path=":id" element={<Template/>}
+          loader=  { useMemo(()=>(
+            async ({params})=>{
+              const {id} = params
+              const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=89707361b16946b90801886bc1f0622c`);
+              const json = await response.json();
+              if(response.ok){
+                  return json
+              }
+              if(!response.ok){
+                  throw Error('cant load data')
+              }
+          
+          }
+    ),[]) 
+        }
+          errorElement={<NotFound/>}
+      />
+    </Route>
+  ))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={router} />
     </div>
   );
 }
