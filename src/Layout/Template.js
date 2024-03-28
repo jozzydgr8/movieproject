@@ -12,7 +12,7 @@ export const Template = React.memo(()=>{
          <section className="templatesection">
          <nav className="navbar ">
                 <div className="container-fluid">
-                    <Link to='/' className="navbar-brand" >{`Back to moviebox>>`}</Link>
+                    <Link to='/movieproject' className="navbar-brand" >{`Back to moviebox>>`}</Link>
                 </div>
             </nav>
             <div className="container-fluid">

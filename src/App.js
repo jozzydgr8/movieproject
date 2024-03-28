@@ -1,4 +1,4 @@
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import { Navigate, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 
 import {Root} from './Layout/Root'
 import {Template} from './Layout/Template'
@@ -24,7 +24,7 @@ function App() {
                   return json
               }
               if(!response.ok){
-                  throw Error('cant load data')
+                  return <Navigate to={'/movieproject'} />
               }
           
           }
