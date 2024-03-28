@@ -24,7 +24,7 @@ function App() {
                   return json
               }
               if(!response.ok){
-                  return <Navigate to={'/movieproject'} />
+                  throw Error('cant load data')
               }
           
           }
@@ -32,6 +32,7 @@ function App() {
         }
           
       />
+      <Route path="*" element={<Navigate to={'/movieproject'} />} />
     </Route>
   ))
   return (
