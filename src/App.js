@@ -12,7 +12,7 @@ import { useMemo } from "react";
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={<Root/>} errorElement={<NotFound/>} >
+    <Route path="/movieproject" element={<Root/>} errorElement={<NotFound/>} >
       <Route index element={<Home/>} />
       <Route path=":id" element={<Template/>}
           loader=  { useMemo(()=>(
